@@ -14,9 +14,10 @@ options.add_argument("--disable-dev-shm-usage")
 
 @pytest.fixture(scope="module", autouse=True)
 def docker():
-    subprocess.run(
-        "docker run -d --name selenium_chrome -p 4444:4444 -p 5900:5900 -v /dev/shm:/dev/shm selenium/standalone-chrome-debug",
-        shell=True, check=True)
+    subprocess.run(f"docker run -d --name selenium_chrome -p"
+                   f" {port}:4444 -v "
+                   f"/dev/shm:/dev/shm selenium/standalone-chrome",
+                   shell=True, check=True)
     time.sleep(5)
     pytest.driver = webdriver.Remote(
         command_executor=f'http://localhost:{port}/wd/hub',
