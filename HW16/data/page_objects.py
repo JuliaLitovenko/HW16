@@ -4,7 +4,7 @@ import names
 class LoginPage:
     submit_button_id = '//*[@id="login-form"]/div[3]/input'
     login_field_id = 'id_username'
-    password_field_id = '//*[@id="id_password"]'
+    password_field_id = 'id_password'
 
 
 class MainPage:
