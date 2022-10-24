@@ -1,6 +1,5 @@
 import pytest
 import time
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 from data.links import Main_Page_URl
 from data.page_objects import MainPage, UserPage, ChangeUserPage, UsersCred, LoginPage
