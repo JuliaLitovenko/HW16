@@ -25,7 +25,7 @@ def docker():
 
     # Post-conditions
     yield
-    os.system("docker rm -f selenium_chrome", shell=True, check=True)
+    os.system("docker rm -f selenium_chrome")
 
 
 
