@@ -10,7 +10,7 @@ port = 4444
 
 @pytest.fixture(scope="module", autouse=True)
 def docker():
-    os.run(f"docker run -d --name selenium_chrome -p {port}:4444 selenium/standalone-chrome-debug")
+    os.system(f"docker run -d --name selenium_chrome -p {port}:4444 selenium/standalone-chrome-debug")
     time.sleep(5)
     options = webdriver.ChromeOptions()
     options.add_argument('--no-sandbox')
@@ -25,7 +25,7 @@ def docker():
 
     # Post-conditions
     yield
-    os.run("docker rm -f selenium_chrome", shell=True, check=True)
+    os.system("docker rm -f selenium_chrome", shell=True, check=True)
 
 
 
