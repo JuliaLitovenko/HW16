@@ -26,8 +26,8 @@ pytest.driver = webdriver.Remote(
 )
 
   # Post-conditions
-yield
-subprocess.run("docker rm -f selenium_chrome", shell=True, check=True)
+    yield
+    subprocess.run("docker rm -f selenium_chrome", shell=True, check=True)
 
 
 
